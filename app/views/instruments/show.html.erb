@@ -11,3 +11,6 @@
 <p>
   <%= @instrument.price %>
 </p>
+
+<%= link_to "Edit this instrument", edit_instrument_path(@instrument.id) %>
+<%= link_to "Back to Instrument list", instruments_path %>
