@@ -1,7 +1,9 @@
 <h1>Instruments</h1>
 
 <% @instruments.each do |instrument| %>
-  <li> <%= instrument.name %> </li>
+  <%= link_to instrument.name, instrument_path([:id]) %>
+  <%= button_to 'delete', instrument, method: :delete %>
+  <br>
 <% end %>
 
 <%= link_to "Add an instrument", new_instrument_path %>
