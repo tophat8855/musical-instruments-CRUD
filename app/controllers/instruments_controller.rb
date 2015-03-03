@@ -11,6 +11,8 @@ class InstrumentsController < ApplicationController
     @instrument = Instrument.new(instrument_params)
     if @instrument.save
       redirect_to instruments_path
+    else
+      redirect_to insruments_path, notice: "Instrument not created"
     end
   end
 
@@ -27,6 +29,8 @@ class InstrumentsController < ApplicationController
     @instrument.update(instrument_params)
     if @instrument.save
       redirect_to instrument_path
+    else
+      redirect_to edit_instrument_path, notice: "Instrument not updated"
     end
   end
 
